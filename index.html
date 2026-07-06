@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Componentes visuales propios creados</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/componente.css" />
+</head>
+
+
+<body>
+
+  <p> Componentes Reutilizables con funciones visuales</p>
+
+  <section>
+    <h2> Aviso estilo notificacion que aparecen y desaparecen solos</h2>
+    <div class="botones">
+      <button class="btn-exito" onclick="mostrarAviso('Se guardo correctamente', 'exito')">
+        Mostrar exito
+      </button>
+      <button class="btn-error" onclick="mostrarAviso('Ocurrio un error al guardar', 'error', 5000)">
+        Mostrar error
+      </button>
+      <button class="btn-info" onclick="mostrarAviso('Tu sesion expirara en 5 minutos', 'info')">
+        Mostrar info
+      </button>
+      <button class="btn-advertencia" onclick="mostrarAviso('Revisa los datos ingresados', 'advertencia', 4000)">
+        Mostrar advertencia
+      </button>
+    </div>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Ventana mejor que un alert basico</h2>
+    <p>Ventana emergente con titulo y contenido personalizable</p>
+
+    <div class="botones">
+      <button class="btn-info"
+        onclick="abrirVentana('Vuelva a presionar para confirmar', 'Seguro que quieres continuar:o?')">
+        Aviso de confirmacion
+      </button>
+
+      <button class="btn-advertencia" onclick="abrirVentana('Aviso Urgente', 'Tu contrasena vence en 3 dias')">
+        Abrir ventana de aviso general
+      </button>
+    </div>
+  </section>
+
+  <hr />
+
+  <section>
+    <h1>Ventanas estilo acordeon</h1>
+    <div id="mi-acordeon" class="acordeon"></div>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Tip al estilo hoover</h2>
+    <p>Pasa el mouse sobre los botones para ver el mensaje</p>
+
+    <div class="botones">
+      <button class="btn-exito" data-mensaje="Guarda los cambios realizados">
+        Guardar
+      </button>
+
+      <button class="btn-error" data-mensaje="Esta accion no se puede deshacer">
+        Eliminar
+      </button>
+      <button class="btn-info" data-mensaje="Descarga el archivo en PDF">
+        Descargar
+      </button>
+    </div>
+  </section>
+
+
+  <hr />
+
+  <section>
+    <h2>Tarjetas con contenido escencial para anuncios, foto,texto y titulo</h2>
+    <p> Muestra una imagen, un titulo y una descripcion util para servicios,caracteristicas o redes sociales</p>
+
+    <div id="mis-tarjetas"></div>
+  </section>
+  <!-- //estos componentes es mas practico inicializarlos desde un script dejamos su id en div para posteriormente el codigo los despliegue donde les asignamos-->
+
+  <hr />
+
+  <section>
+    <h2> Barra de progreso animada </h2>
+    <p>El componente puede crecer hasta 100% dependiendo del dato que reciba</p>
+    <div id="mi-barra" style="display:flex; justify-content:center;"></div>
+  </section>
+
+  <script src="js/componente.js"></script>
+
+  <script>
+    crearAcordeon("mi-acordeon", [
+      {
+        titulo: "Titulo",
+        contenido: "Texto"
+      },
+      {
+        titulo: "Titulo",
+        contenido: "Texto"
+      },
+      {
+        titulo: "Como recibe la info",
+        contenido: "todo en texto"
+      }
+    ]);
+
+    activarTooltips();
+
+    // pARA Crear nuestras targetas necesitamos indicar de donde la imagen
+    crearTarjetas("mis-tarjetas", [
+      { icono: "img/pollo.png", titulo: "Titulo", descripcion: "puede automatizar su generacion" },
+      { icono: "img/pollo.png", titulo: "rapido", descripcion: "es basica su construccion" },
+      { icono: "img/pollo.png", titulo: "Facil de usar", descripcion: "solo llama la funcion" }
+    ]);
+    //barra que con ayuda de algun evento puede actualizarse en tiempo real, y tambien cuando se hace netrar en escena entra animada hacia el progreso actual 
+    crearBarraProgreso("mi-barra", 67, "67%");//
+  </script>
+</body>
+
+</html>

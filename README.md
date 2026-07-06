@@ -94,3 +94,10 @@ en el HTML:
 crearBarraProgreso("mi-barra", 67, "Progreso del curso 67%");
 ```
 <img width="938" height="193" alt="image" src="https://github.com/user-attachments/assets/697dcd38-3357-45be-8f42-21dfa21232b1" />
+
+
+
+
+
+https://github.com/user-attachments/assets/36f53a3a-1b69-4e5e-9429-db697ffa63fa
+
